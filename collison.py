@@ -53,6 +53,7 @@ def CR():
     print("Average to break weak collision resistant: %s" % avg)
 
 def CFR():
+    print "Collision Free Resistant Tester"
     value = "142525" # random value
     total = 0
     test = 0
@@ -61,9 +62,9 @@ def CFR():
         test += 1
         while True:
             trial += 1
-            ranstr = ranstr()
+            ranstr1 = ranstr()
             # hash with md5
-            h = hashlib.md5(ranstr.encode)
+            h = hashlib.md5(ranstr1.encode())
             # turn to hex
             hstring = h.hexdigest()
             if hstring[0:6] == value:
@@ -74,6 +75,6 @@ def CFR():
     print("Average to break collision free resistant: %s" % avg)
     
 
-
 CR()
+print "\n\n"
 CFR()
