@@ -18,9 +18,9 @@ int main(int argc, char *argv[])
     // }
 
     // md = EVP_get_digestbyname(argv[1]);
-    // hash value of 24 bits
+    // hash value of 24 bits, 3 bytes -> letters
     // 
-    md = EVP_get_digestbyname(OBJ_nid2sn(65)); // hash
+    md = EVP_get_digestbyname(OBJ_nid2sn(65)); // hash rsa
     if (md == NULL)
     {
         printf("Unknown message digest %s\n", argv[1]);

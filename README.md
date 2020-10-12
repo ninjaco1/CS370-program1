@@ -1,6 +1,6 @@
 To run question 3.4:
-python encrpytOSSL3-4.py
+run `python encrpytOSSL3-4.py`
 
 To run question 3.8:
-gcc collision.c -lcrypto -lssl
-a.out 
+compile: `gcc collision.c -lcrypto -lssl`
+ run: `a.out`
