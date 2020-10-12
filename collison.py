@@ -16,7 +16,7 @@ def ranstr():
     return ranstring
 
 def CR():
-    
+    print "Weak collision Resistant Test"
     test = 0
     total = 0
     for _ in range(3):
@@ -50,8 +50,30 @@ def CR():
         print ("Test %s took %s trials" % (test,trial))
         total += trial
     avg = total / 3
-    print("Average to break collison resistant: %s" % avg)
+    print("Average to break weak collision resistant: %s" % avg)
 
+def CFR():
+    value = "142525" # random value
+    total = 0
+    test = 0
+    for _ in range(3):
+        trial = 0
+        test += 1
+        while True:
+            trial += 1
+            ranstr = ranstr()
+            # hash with md5
+            h = hashlib.md5(ranstr.encode)
+            # turn to hex
+            hstring = h.hexdigest()
+            if hstring[0:6] == value:
+                break
+        print ("Test %s took %s trials" % (test,trial))
+        total += trial
+    avg = total / 3
+    print("Average to break collision free resistant: %s" % avg)
+    
 
 
 CR()
+CFR()
